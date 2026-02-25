@@ -1,0 +1,34 @@
+unmanaged implementation in class zbp_i_orden_trabajo unique;
+strict ( 2 );
+
+define behavior for ZI_ORDEN_TRABAJO //alias <alias_name>
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Uuid;
+  association _Tareas { create; }
+  mapping for ztorden
+  {
+    FechaFin = fecha_fin;
+    FechaInicio = fecha_inicio;
+    Responsable = responsable;
+  }
+
+}
+
+define behavior for ZI_TAREA //alias <alias_name>
+//late numbering
+lock dependent by _OrdenTrabajo
+authorization dependent by _OrdenTrabajo
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid , UuidOrden;
+  association _OrdenTrabajo;
+}

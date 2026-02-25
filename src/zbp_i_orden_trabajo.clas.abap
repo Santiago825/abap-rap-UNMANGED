@@ -1,0 +1,5 @@
+CLASS zbp_i_orden_trabajo DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_orden_trabajo.
+ENDCLASS.
+
+CLASS zbp_i_orden_trabajo IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,31 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Activo',
+    typeNamePlural: 'Activos',
+    title: { type: #STANDARD, value: 'OrdenNum' }     // El valor es el nombre del elemento, sin comillas
+  }
+}
+annotate entity ZC_ORDENTRABAJO
+    with 
+{
+    @UI.facet: [{ id: 'ordendata', type: #IDENTIFICATION_REFERENCE , label: 'Datos generales' ,position: 10 },
+                { id: 'tarea', type: #LINEITEM_REFERENCE , label: 'tareas' ,position: 20, targetElement: '_Tareas' }]
+    
+    @UI:{ lineItem: [{ position: 10 }] ,identification: [{ position: 10 , label: 'Id' }],selectionField: [{ position: 10 }]}
+    Uuid;
+    @UI:{ lineItem: [{ position: 20 ,label: 'Numero de orden' }] ,identification: [{ position: 20 , label: 'Numero de orden' }],selectionField: [{ position: 20 }]}
+    OrdenNum;
+    @UI:{ lineItem: [{ position: 30 ,label: 'Descripcion'}] ,identification: [{ position: 30 , label: 'Descripcion' }],selectionField: [{ position: 30 }]}
+    Descripcion;
+    @UI:{ lineItem: [{ position: 40 ,label: 'Estado'}] ,identification: [{ position: 40 , label: 'Estado' }],selectionField: [{ position: 40 }]}
+    Status;
+    @UI:{ lineItem: [{ position: 50 ,label: 'Fecha de inicio'}] ,identification: [{ position: 50 , label: 'Fecha de inicio' }],selectionField: [{ position: 50 }]}
+    FechaInicio;
+    @UI:{ lineItem: [{ position: 60 ,label: 'Feach fin'}] ,identification: [{ position: 60 , label: 'Feach fin' }],selectionField: [{ position: 60 }]}
+    FechaFin;
+    @UI:{ lineItem: [{ position: 70 ,label: 'Responsable'}] ,identification: [{ position: 70 , label: 'Responsable' }],selectionField: [{ position: 70 }]}
+    Responsable;
+
+    
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition - servicio orden de trabajo'
+define service ZSD_ORDEN_TRABAJO {
+  expose ZC_ORDENTRABAJO as orden_trabajo;
+  expose ZC_TAREA        as Tareas;
+}

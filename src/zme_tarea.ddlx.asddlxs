@@ -1,0 +1,31 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Activo',
+    typeNamePlural: 'Activos',
+    title: { type: #STANDARD, value: 'Descripcion' }     // El valor es el nombre del elemento, sin comillas
+  }
+}
+annotate entity ZC_TAREA
+    with 
+{
+    @UI.facet: [{ id: 'tareadata', type: #IDENTIFICATION_REFERENCE , label: 'Tarea' ,position: 10 }]
+    
+    @UI:{ lineItem: [{ position: 10 , label: 'Id'}] ,identification: [{ position: 10 , label: 'Id' }],selectionField: [{ position: 10 }]}
+    Uuid;
+    @UI:{ lineItem: [{ position: 20 , label: 'Id orden de trabajo'}] ,identification: [{ position: 20 , label: 'Id orden de trabajo' }],selectionField: [{ position: 20 }]}
+    UuidOrden;
+    @UI:{ lineItem: [{ position: 30 , label: 'Posicion'}] ,identification: [{ position: 30 , label: 'Posicion' }],selectionField: [{ position: 30 }]}
+    Posicion;
+    @UI:{ lineItem: [{ position: 40 , label: 'Descripcion'}] ,identification: [{ position: 40 , label: 'Descripcion' }],selectionField: [{ position: 40 }]}
+    Descripcion;
+    @UI:{ lineItem: [{ position: 50 , label: 'Estado'}] ,identification: [{ position: 50 , label: 'Estado' }],selectionField: [{ position: 50 }]}
+    Status;
+    @UI:{ lineItem: [{ position: 60 , label: 'Duracion'}] ,identification: [{ position: 60 , label: 'Duracion' }],selectionField: [{ position: 60 }]}
+    DuracionHoras;
+    @UI:{ lineItem: [{ position: 70, label: 'Tecnico' }] ,identification: [{ position: 70 , label: 'Tecnico' }],selectionField: [{ position: 70 }]}
+    Tecnico;
+    @UI:{ lineItem: [{ position: 80, label: 'Fecha de ejecucion' }] ,identification: [{ position: 80 , label: 'Fecha de ejecucion' }],selectionField: [{ position: 80 }]}
+    FechaEjecucion;
+    
+}
